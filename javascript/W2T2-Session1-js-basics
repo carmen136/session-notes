@@ -1,0 +1,118 @@
+
+Netzgate Navigator <-> Internet Explorer -> Machtkampf, einfache Websitesprache zu kreieren um im Browser Dynamik zu kreieren
+-> Internet Explorer als Browser gewinnt Machtkampf
+
+
+JS - Wissenswertes
+	- Entwicklung von JavaScript: Brandon Eich 1995 (in 10 Tagen, Grundversion von JavaScript)
+	- Mocha -> LiveScript -> Javascript
+	- Was ist Dynamik in Webseiten?
+		-> "Die grüne Katze springt"
+		-> Katze = Nomen (HTML)
+		-> grün = Adjektiv (CSS)
+		-> springen = Verb (JS)
+	- ECMA (=European Computer Manufactures Association) 	-> definieren den Standard für JavaScript (ECMA Script Standard)
+								-> denn versch. Browser haben leicht andere Sprachen entwickelt
+								-> wichtigster Standard: ES6 2015 (mittlerweile ES14)
+	- Was kann man heute mit JavaScript programmieren?
+		> Backend Server (mit Node)
+		> Desktop Apps (mit Electron)
+		> Mobile Apps (mit React Native)
+		> alles im Browser
+	-> Node, Electron usw. sind sogenannte Umgebungen (~ Funktionen die man ansprechen will),
+		also JavaScript bleibt als Sprache immer gleich,
+		in versch. Umgebungen spricht JS verschiedene Dinge an und nicht alle JS Befehle machen überall Sinn 
+
+
+Degbugging, Infos etc.:
+
+1) console.log("Hallo Haie!")
+	Hallo Haie!
+
+2) console.error("UPS!!")
+	UPS!!
+
+3) console.clear()
+	-> "säubert" die Konsole
+
+
+am Anfang: z.B: console.log z.B. um zu schauen ob HTML und JS miteinander verbunden sind
+weitere Funktionen: 
+
+
+JavaScript Verlinkung:
+am Anfang des html Dokuments:
+	Befehl "defer" wichtig um sicherzustellen dass die Seite erst lädt bevor JavaScript lädt
+
+<script src=index.js defer></script>
+
+
+Vorgehensweise JavaScript
+
+JavaScript kreiert wie HTML eine Struktur - bei JavaScript: DOM
+
+1) Element auf der Webseite auswählen
+	document.querySelector -> Äquivalent zum css-Selektor
+	wählt immer nur das erste Element aus 
+	Bsp: document.querySelector("h1")
+
+	
+
+wichtiges html-Attribut: 
+zeigt dass man in js mit diesem html-Element etwas machen wollen
+	data.js="irgendeinName"
+
+so referenziert man das dann in JavaScript:
+	Bsp.: const mainElement =document.querySelector("[data-js='main']");
+
+
+
+2) dann verändert man damit etwas
+
+css Klassenstyle hinzufügen:
+mainElement.classList.add("dark");
+
+css Klassenstyle hinzufügen:
+mainElement.classList.remove("dark");
+
+
+
+const loggingButton = document.querySelector("[data-js='logging-button']");
+
+loggingButton.addEventListener("click", ()=> {
+	console.log("You clicked a button");
+});
+
+-> addEventListener = JavaScript hört auf das, was gehört werden soll (in dem Fall "click"), wenn das passiert, führt JS den Befehl in {} aus
+
+
+
+const addColorButton = document.querySelector("[data-js='add-button']");
+const removeColorButton = document.querySelector("[data-js='add-button']");
+const toggleColorButton = document.querySelector("[data-js='add-button']");
+
+addColorButton.addEventListener("click", ()=> {
+	mainElement.classList.add("dark");
+});
+
+-> mainElement -> hier muss stehen was geändert werden soll
+
+
+removeColorButton.addEventListener("click", ()=> {
+	mainElement.classList.remove("dark");
+});
+
+
+toggleColorButton.addEventListener("click", ()=> {
+	mainElement.classList.toggle("dark");
+});
+
+
+
+"mainElement.classList"
+	> erlaubt mir Zugriff auf das Element
+
+"remove("dark")"
+	> führt die Anweisung für das zugegriffene Element aus
+
+

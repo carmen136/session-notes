@@ -1,0 +1,74 @@
+
+wenn man nur in VS Code arbeiten möchte und nicht in die Browser Konsole gehen wollen, kann man bei VS Code den Terminal als Konsole nutzen
+
+
+Variablen:
+
+let
+const 	-> kann nicht reassigned werden
+
+
+
+Benennung von Variablen:
+
+camelCase	-> wird bei JS benutzt
+snake_case	-> z.B. bei python
+kebab-case	-> Dateinamen
+
+
+primitive Datentypen:
+
+strings		-> "Inhalt"
+numbers		-> 24
+booleans	-> nur zwei Werte: true oder false
+undefined	-> bei let Variablen, die nur deklariert aber noch nicht initialisiert wurden
+null		-> repräsentiert nichts, ein nichts was ich definiert habe -> es ist nicht undefiniert -> gut zum zurücksetzen
+Big Int		-> für Zahlen mit Werten über 9007199254740991 (benutzt man aber nie weil die Zahl sehr groß ist)
+Symbol		-> zum Kreieren für unique Elements (?)
+
+
+mathematische Operatoren:
+
++
+-
+*
+** potenzieren
+/
+% -> "remainder" bzw. "modulus" (wieviel Rest beim dividieren übrig bleibt)
+
+
+
+Tipp verkürzte Schreibweisen:
+
+age = age + 1 ist das Gleiche wie age+=1 und das Gleiche wie age++ (für +1 gibt es diese noch verkürztere Schreibweise weil die so oft verwendet wird)
+
+age = age - 1 ... age -= 1 ... age--1
+
+age = age * 3 ist das Gleiche wie age*=3
+
+
+
+
+mathematische Regeln beachten:
+
+> Punkt vor Strich
+> Klammersetzung
+
+
+
+verschiedene Zahlysteme:
+
+Dezimal System = 0 - 9
+Binary System = 0 und 1
+Hexadezimal System = 0 - 9 plus a - f
+
+
+
+Strict Mode:
+
+"use strict";
+
+-> 	mit aktiviertem strict mode werden bestimmte normalerweise erlaubte Aktionen zu Fehlern deklariert,
+	die zu Verwirrungen führen können
+
+

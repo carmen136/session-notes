@@ -1,0 +1,78 @@
+
+.code runner -> Erweiterung um zu schauen was man codet
+
+
+if-else Anwendung abgekürzt: (Ternery operator)
+
+carrots = carrots + (dishesCleaned >= 2 ? 2 : -1);
+
+
+man kann das auch separieren:
+
+const extraCarrots = dishesCleaned >= 2 ? 2 : -1;
+
+carrots = carrots + extraCarrots
+
+
+
+Wichtig!
+
+
+Bsp.: let carrots = 0;
+
+0 	=> false
+1... 	=> true
+-1... 	=> true
+
+
+allgemein: 
+
+truthy values:
+
+- alle Zahlen außer 0 und -0
+- gefüllte strings "hello"
+- true
+
+
+falsy values:
+
+- 0 / -0
+- null
+- false
+- undefined
+- leere strings: ""
+
+
+Vergleichsoperatoren:
+
+A === B = strict equal -> true wenn beide Werte gleich sind, auch ihr Datentyp
+A !== B = strict not equal -> true wenn beide Werte NICHT gleich sind, auch ihr Datentyp
+A > B
+A > B
+A >= B
+A <= B
+
+
+Logische Operatoren:
+
+!A = not -> verändert ein true value in false und umgekehrt
+A || B = or -> true wenn entweder A oder B true
+A && B = and -> true wenn A und B true
+
+
+
+
+Wichtig: Beispiel zu input values
+
+const input = document.querySelector('[data-js="age-input"]');
+const button = document.querySelector('[data-js="age-button"]');
+const output = document.querySelector('[data-js="age-output"]');
+
+button.addEventListener("click", () => {
+  // Number(x) converts the string from the input to a number
+  // Beware: input values are *always* strings!
+  const age = Number(input.value);
+
+
+
+
