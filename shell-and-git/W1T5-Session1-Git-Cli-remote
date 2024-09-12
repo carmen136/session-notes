@@ -1,0 +1,178 @@
+git 
+git software ist auf dem Rechner drauf (haben wir installiert)
+man muss seine repos nicht auf github hochladen (das dient nur zum teilen und kollaborieren)
+man kann repos auch nur für sich selbst erstellen um die Versionskontrolle zu nutzen
+
+
+Wie macht (initialisiert) man aus einem Ordner ein git repo?:
+-> Befehl:	
+
+Ordner > git init
+
+
+bei erfolgreicher Initialisierung: 
+Ordnername main
+-> durch "main" nach dem Ordnername weiß man dass es ein Repo ist
+
+
+Repo soll doch kein Repo sein, nur normaler Ordner: 
+-> git Ordner löschen
+Befehl:
+
+rm -rf .git
+
+
+git zeigen dass eine Datei ignoriert werden soll:
+-> neue Datei anlegen:
+
+touch .gitignore
+
+-> in diese Datei reinschreiben was ignoriert werden soll
+-> z.B. bei Mac: .DS-Store; oder auch Passwörter
+-> ganzer Unterordner: ./Ordnername
+
+
+aktueller Stand Datei speichern (commiten):
+
+
+Status des git Ordners bzw. der Dateien anschauen (wieviel commits gibt es bereits, etc.)
+Befehl:
+
+git status
+
+
+
+Wenn man will dass Dateien in die git-Historie aufgenommen werden möchte (also zu commiten, zu stagen)
+Befehl:
+
+git add Dokumentname 
+
+oder:
+
+alle Dateien im Verzeichnis adden die noch nicht gestagt sind:
+
+git add .
+
+
+Eine Datei wieder von der Stage runternehmen:
+Befehl:
+
+git rm --cashed .gitignore
+
+
+commit erstellen:
+Befehl:
+gi
+git commit -m'Name bzw. Beschreibung für das commit'
+
+
+Commits anschauen:git
+Befehl:
+
+git log --onelinegit
+
+re
+
+aktuelle Version zurücksetzen zum letzten commit:
+Befehl:
+
+git restore Dateiname 	(nur einzelne Datei)
+git restore .		(gesamtes Verzeichnis)
+
+
+
+lokales repo mit github verknüpfen:
+
+1) github: "push an existing repo from the command line"
+2) 
+
+
+Womit ist mein git verknüpft? Mit welchen anderen repos bin ich verknüpft?
+Befehl:
+
+git remote -v
+
+
+Verbindung erstellen:
+
+ssh key = Postanschrift zu unserem github repo
+
+
+2) Verbindung hinzufügen (git lokal)
+Befehl:
+
+git remote add origin ssh-key
+	(-> "origin" = Standardname für Haupt-remote-Verbindung)
+
+
+jetzt 
+git remote -v 
+-> Verbindung wird angezeigt
+
+fetch: von github holen
+push: auf github laden
+
+
+-> jetzt ist lokales git repo mit github verknüpft
+
+
+3) Inhalte die wir lokal haben auf github hochladen -> synchronisieren
+Befehl:
+
+git push -u origin main
+	(-u setzt Verbindung zur main branch)
+
+(es werden ein paar Infos angezeigt wenn es geklappt hat)
+
+
+bei existierenden Verbindungen:
+Befehl:
+
+git add .
+
+
+4) bei neuen Veränderungen:
+
+git commit -m "added all" 
+git push
+
+-> dann sollten die Veränderungen auf bei github angezeigt werden
+
+
+
+wie kann man sich repos klonen (kopieren) und herunterladen?
+Befehl:
+
+git clone "ssh key von der repo"
+
+
+Was passiert, wenn verschiedene Leute an den Kopien arbeiten?
+
+Wenn sich die Arbeiten nicht konflikten (weil jeder an etwas anderem arbeitet), passiert nichts, alles ok
+
+ansonsten: Thema heute Nachmittag und git advanced (-> Merch Konflikte)
+
+
+
+gepushtes commit wieder zurücknehmen mit restore?
+
+1) restore gilt nur wenn die Änderungen noch nicht als neues commit gespeichert wurden (sideinfo)
+
+2) ein commit wieder zurücknehmen ist sehr kompliziert und könnte mit anderen zu Konflikten führen
+-> lieber ein neues commit erstellen und Veränderungen vornehmen
+
+
+
+falsches repo verbunden:
+
+- git remote remove origin (-> "origin" = Name der Hauptverbindung)
+- dann kann man eine neue Verbindung setzen
+
+
+
+
+
+
+WICHTIG:
+kein Repo in einem anderen Repo erstellen!
+

@@ -1,0 +1,92 @@
+main branch -> aus dem wird alles weitere 
+
+main branch = life code der veröffentlicht wird
+
+man macht Veränderungen nie direkt am main branch sondern erstellt eine Kopie des main branch
+
+man möchte es erstmal testen bevor das ins main implementiert wird
+
+daher: git stellt ein Konzept zur Verfügung -> branches
+
+!man erstellt ein feature branch
+
+man wechselt vom main branch in den feature branch
+
+-> man erstellt ein commit auf dem feature branch
+-> feature branch commit zeig auf den main branch und enthält selbst die Veränderung die man gemacht hat
+
+
+merch commit:
+führt aktuellstes feature branch commit zum main branch und fügt die Änderung in das main branch ein
+
+
+man kann auch den feature branch auf github hochladen
+
+
+Schritte Erstellung und switchen auf feature branch:
+Befehl:
+
+git switch -c feature/positioning (-> Name der feature branch)
+	(-c = create)
+
+Änderungen machen und commiten:
+
+git add .
+git commit -m "fix header"
+
+
+
+zurück auf main switchen und umgekehrt:
+Befehl:
+	git switch main
+	git switch feature/positioning
+
+
+Dinge von feature/positioning auf github hochpushen:
+
+(man muss erstmal wieder eine Verbindung knüpfen (statt main Verbindung, feature Verbindung)
+git push --set-upstream origin feature/positioning
+
+git branch --all (zeigt nur die Übersicht an, welche Branches man hat)
+
+
+Bsp.: Chef nach code review fragen
+pull request 
+
+git
+auf Profil gehen:
+github schlägt Erstellung eines pull requests vor
+
+
+Pull request workflow
+man kann eine Nachricht schreiben, z.B: "Hey Chef, schau mal ob du noch Fehler findest"
+
+-> Create pull request
+
+> unter Reiter "Files changed" sieht man was genau geändert wurde
+
+> wenn Fehler gefunden werden oder Änderungen gewünscht sind:
+	> unter "+" vor der Zeile kann man Kommentare hinzufügen?
+	> Code review
+	> wenn fertig: "Finish your review"
+
+	> merge pull request -> Inhalte vom feature branch in main branch überführen
+
+
+lokal ist man dann noch auf dem alten Stand
+
+neueste Änderungen mit "pull" runterziehen:
+Befehl:
+
+git pull 
+
+lokales feature branch löschen
+Befehl:
+
+git branch -d
+
+git push -d origin <branchname>
+
+oder:
+
+git fetch --prune (mal ausprobieren ob das klappt) -> klappt nicht
