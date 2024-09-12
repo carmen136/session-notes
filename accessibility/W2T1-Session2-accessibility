@@ -1,0 +1,41 @@
+
+Semantik HTML für Barrierefreiheit:
+
+
+hilfreiche Attribute:
+ARIA = Accessible Rich Internet Applications
+
+- aria-label:
+	Definiert eine Bezeichnung für ein interaktives Element
+	Verwendung, wenn der zugängliche Name eines Elements fehlt,
+	zum Beispiel wenn eine Schaltfläche keinen Text, 
+	sondern nur ein Symbol enthält.
+
+- aria-labelledby:
+	Gibt an, welches Element das Element bezeichnet, auf das es angewendet wird
+	Einige Elemente haben eine eigene Möglichkeit, ein anderes Element mit seiner Beschriftung zu referenzieren
+	(z.B. Eingabeelemente und Beschriftungselemente).
+
+
+- alt:
+	benutzt man bei img-Elementen (falls das Bild nicht angezeigt oder gesehen werden kann)
+
+- role ="role type"
+	Bsp: <ul role="tabpanel1"> würde im Screenreader als "tab panel" vorgelesen werden
+	wichtig hier: Bezeichnung muss genau mit der Funktion übereinstimmen, ansonsten wird Barrierefreiheit negativ beeinflusst
+
+	> es gibt 6 verschiedene roles-Kategorien
+		a) Document structure roles, z.B. note oder tooltip -> beschreibt die Struktur eines Inhaltsabschnitts
+		b) Widget roles, z.B. slider oder menu -> beschreiben den Elementtypen auf einer Webseite
+
+
+Quick Wins:
+
+- Semantik wichtig! Also keine div-Salate
+- heading Hierarchie einhalten (nur ein h1 auf einer Seite)
+- hohe Farbkontraste benutzen
+- alle interaktiven Elemente sollen einen Namen haben 
+	(wenn diese nur Icons als Inhalt haben - wenn der Icon beschreibenden Text enthält braucht man auch kein aria-label)
+- einfache Sprache verwenden	
+
+
